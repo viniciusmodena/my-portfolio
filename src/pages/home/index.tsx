@@ -41,35 +41,32 @@ export const Home = (): JSX.Element => {
                 src={`https://github.com/${userData.githubUser}.png`}
                 alt={userData.nameUser}
                 title={userData.nameUser}
-                width={"48px"}
-                height={"48px"}
+                width={"120px"}
+                height={"120px"}
               />
-              <Text color="grey4">Hello, my name is {userData.nameUser}</Text>
+              <Text type="heading2" color="grey4">
+                Hey, eu sou {userData.nameUser}.
+              </Text>
             </Flex>
             <Text as="h1" type="heading1" color="grey5">
-              I{" "}
-              <Text as="span" type="heading1" color="brand1">
-                love
+              Sou um{" "}
+              <Text as="span" type="heading1" color="brand2">
+                Desenvolvedor Web FullStack
               </Text>{" "}
-              creating and{" "}
-              <Text as="span" type="heading1" color="brand1">
-                developing
-              </Text>{" "}
-              projects
+              , e adoro criar e desenvolver projetos.
             </Text>
             <Text type="body1" color="grey2">
-              Discover here in this environment, created especially for you, all
-              my projects and technologies
+              Aproveite para dar uma olhado em alguns dos meus projetos.
             </Text>
             <HeaderButtonsArea>
               <Button as="a" type="primary" href="#projects">
-                See Projects
+                Projetos
               </Button>
               <Button as="a" type="outline" target="_blank" href={portfolioUrl}>
-                See my portfolio source code
+                Ver codigo do meu portfolio
               </Button>
               <Button
-                color="grey5"
+                color="grey4"
                 as="a"
                 css={{ "&:hover": { color: "$grey1" } }}
                 type="circle"
@@ -84,6 +81,15 @@ export const Home = (): JSX.Element => {
                 <Stack key={index} title={stack.title} icon={stack.img} />
               ))}
             </StackCards>
+            {/* <canvas width="500" height="500" id="myCanvas">
+              <ul>
+                {stackData.map((stack, index) => (
+                  <li key={index}>
+                    <img src={stack.icon}
+                  </li>
+                ))}
+              </ul>
+            </canvas> */}
           </HeaderContent>
         </Container>
       </Header>
@@ -91,11 +97,12 @@ export const Home = (): JSX.Element => {
         <Container>
           <ProjectAreaWrapperColumns>
             <ProjectsAreaSocialMediaMessage>
-              <Text as="h2" type="heading4" color="grey4">
-                My projects
+              <Text as="h2" type="heading2" color="grey3">
+                Meus Projetos
               </Text>
               <Text as="p" type="body1" color="grey2">
-                Some of my projects
+                Segue alguns dos projetos que desenvolve ou participei do
+                desenvolvimento
                 {/* <Text as="span" color="brand5">
                   side projects
                 </Text> */}

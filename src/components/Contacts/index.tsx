@@ -15,14 +15,36 @@ import {
 import { FaWhatsapp, FaEnvelopeOpen, FaLinkedin } from "react-icons/fa";
 import { useRef } from "react";
 import { userData } from "@/utils/userData";
+import Form from "../Form";
 
 export const Contacts = () => {
   const ref = useRef(null);
 
+  // const sendEmail = (e)=> {
+  //   e.preventDefault();
+
+  //   emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+  //     .then((result) => {
+  //         console.log(result.text);
+  //     }, (error) => {
+  //         console.log(error.text);
+  //     });
+  // }
+
+  // <form ref={form} onSubmit={sendEmail}>
+  //     <label>Name</label>
+  //     <input type="text" name="user_name" />
+  //     <label>Email</label>
+  //     <input type="email" name="user_email" />
+  //     <label>Message</label>
+  //     <textarea name="message" />
+  //     <input type="submit" value="Send" />
+  //   </form>
+
   const linkedInUrl = `https://www.linkedin.com/in/${userData.linkedinUser}`;
 
   const { scrollYProgress } = useViewportScroll();
-  const scale = useTransform(scrollYProgress, [0, 1], [0.1, 0.9]);
+  const scale = useTransform(scrollYProgress, [1, 1], [1, 0.9]);
 
   return (
     <ContactSection id="contact">
@@ -31,11 +53,11 @@ export const Contacts = () => {
           <motion.div style={{ scale }}>
             <ContactSectionText>
               <Text type="heading2" color="grey4">
-                Let's talk and{" "}
-                <Text as="span" type="heading2" color="brand1">
-                  develop solutions for your company
+                Entre em contato comigo e bora{" "}
+                <Text as="span" type="heading2" color="brand2">
+                  codar{" "}
                 </Text>
-                , together!
+                !
               </Text>
             </ContactSectionText>
           </motion.div>
@@ -46,12 +68,11 @@ export const Contacts = () => {
               </ContactCardImage>
               <ContactCardContent>
                 <Text type="heading4" color="grey4">
-                  My Whatsapp
+                  WhatsApp
                 </Text>
-                <Text color="grey2" type="body2">
-                  I'm available for a voice chat, let's about creativity
-                  together?
-                </Text>
+                {/* <Text color="grey2" type="body2">
+                  Me manda um whats
+                </Text> */}
                 <Text
                   as="a"
                   color="grey2"
@@ -59,7 +80,7 @@ export const Contacts = () => {
                   target="_blank"
                   href={`https://api.whatsapp.com/send?phone=+55+${userData.whatsappNumber}&text=Ol%C3%A1%2C%20venho%20por%20meio%20do%20seu%20portf%C3%B3lio%20na%20internet%2C%20gostaria%20de%20conhecer%20melhor%20seus%20servi%C3%A7os`}
                 >
-                  Talk Now
+                  Conversar agora
                 </Text>
               </ContactCardContent>
             </ContactCard>
@@ -70,38 +91,44 @@ export const Contacts = () => {
               </ContactCardImage>
               <ContactCardContent>
                 <Text type="heading4" color="grey4">
-                  My email
+                  Email
                 </Text>
                 <Text color="grey2" type="body2">
-                  Send me an email reporting feedbacks, suggestions and ideas
+                  Feedbacks, sugestões ou ideias? Me manda um email para
+                  vmodena94@gmail.com.
                 </Text>
+                {/* <Form /> */}
 
-                <Text
+                {/* <Text
                   as="a"
                   color="grey2"
                   type="body2"
                   target="_blank"
                   href={`mailto=${userData.emailUser}`}
                   onClick={() =>
-                    (window.location.href = "mailto:nekelpatrick.com")
+                    (window.location.href = "mailto:vmodena94@gmail.com.com")
                   }
                 >
-                  Send me an email
-                </Text>
+                  Enviar email
+                </Text> */}
               </ContactCardContent>
             </ContactCard>
             <ContactCard>
-              <ContactCardImage className="linkedin">
+              <ContactCardImage
+                className="linkedin"
+                as="a"
+                target="_blank"
+                href={linkedInUrl}
+              >
                 <FaLinkedin color="#fff" size={24} />
               </ContactCardImage>
               <ContactCardContent>
                 <Text type="heading4" color="grey4">
-                  My LinkedIn
+                  LinkedIn
                 </Text>
-                <Text color="grey2" type="body2">
-                  We can create more constant interactions as well as a sharing
-                  network
-                </Text>
+                {/* <Text color="grey2" type="body2">
+                  Me siga
+                </Text> */}
                 <Text
                   as="a"
                   color="grey2"
@@ -109,7 +136,7 @@ export const Contacts = () => {
                   target="_blank"
                   href={linkedInUrl}
                 >
-                  Go to LinkedIn now
+                  Ir para LinkedIn
                 </Text>
               </ContactCardContent>
             </ContactCard>

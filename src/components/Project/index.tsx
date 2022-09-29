@@ -11,7 +11,7 @@ import { Text } from "@/styles/Text";
 import { useEffect, useState } from "react";
 import { FaGithub, FaShare } from "react-icons/fa";
 
-import { useProjects } from "../context/projectsProvider";
+import { useProjects } from "../../context/projectsProvider";
 
 export const Project = (): JSX.Element => {
   const { repositories, fillReposList } = useProjects();
@@ -36,7 +36,7 @@ export const Project = (): JSX.Element => {
 
             <ProjectStack>
               <Text type="body2" color="grey2">
-                Primary Language:
+                Linguagem:
               </Text>
               {repository.language ? (
                 <ProjectStackTech>
@@ -58,7 +58,7 @@ export const Project = (): JSX.Element => {
             </Text>
             <ProjectLinks>
               <ProjectLink target="_blank" href={repository.html_url}>
-                <FaGithub /> Github Code
+                <FaGithub /> Codigo Fonte
               </ProjectLink>
               {repository.homepage && (
                 <ProjectLink

@@ -25,6 +25,11 @@ export const Button = styled("button", {
         background: "transparent",
         borderColor: "transparent",
         fontWeight: "500",
+        "&:hover": {
+          // backgroundColor: "$brand2",
+          // borderColor: "$brand2",
+          color: "$brand1",
+        },
       },
       primary: {
         background: "$brand1",
@@ -102,7 +107,7 @@ export const Button = styled("button", {
         },
       },
       circle: {
-        borderColor: "$grey5",
+        borderColor: "$grey4",
         backgroundColor: "transparent",
         borderRadius: "50%",
         padding: "0",
@@ -123,14 +128,14 @@ export const Button = styled("button", {
             color: "$socialInstagram",
           },
         },
-        ["&.facebook"]: {
-          backgroundColor: "$socialFacebook",
-          borderColor: "$socialFacebook",
+        ["&.github"]: {
+          backgroundColor: "$socialGitHub",
+          borderColor: "$socialGitHub",
           color: "$whiteFixed",
           "&:hover": {
             backgroundColor: "transparent",
-            borderColor: "$socialFacebook",
-            color: "$socialFacebook",
+            borderColor: "$socialGitHub",
+            color: "$socialGitHub",
           },
         },
         ["&.linkedin"]: {
@@ -144,7 +149,7 @@ export const Button = styled("button", {
           },
         },
         "&:hover": {
-          backgroundColor: "$grey5",
+          backgroundColor: "$grey4",
         },
         "@mobile": {
           width: "5rem",

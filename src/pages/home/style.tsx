@@ -68,8 +68,8 @@ export const HeaderButtonsArea = styled(Flex, {
 export const UserImage = styled("img", {
   borderRadius: "50%",
   "@mobile": {
-    width: "2.25rem",
-    height: "2.25rem",
+    width: "5.25rem",
+    height: "5.25rem",
   },
 });
 
@@ -116,7 +116,7 @@ export const ProjectsArea = styled("section", {
 export const ProjectsAreaSocialMediaMessage = styled("div", {
   display: "flex",
   flexDirection: "column",
-  gap: "2rem",
+  gap: "1rem",
 
   "@mobile": {
     width: "100%",
