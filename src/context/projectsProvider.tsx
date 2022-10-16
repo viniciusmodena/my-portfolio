@@ -13,12 +13,8 @@ interface ReposType {
   description: string;
   html_url: string;
   homepage: string;
-  deploy: string;
-}
-
-interface RepositoryDataType {
-  owner: string;
-  name: string;
+  image_url: string;
+  display_name: string;
   deploy: string;
 }
 
@@ -51,6 +47,8 @@ const ProjectsProvider = ({ children }: ProjectProviderProps) => {
           .then((response: AxiosResponse) => {
             const new_repo = {
               ...response.data,
+              image_url: projectsData[i].image_url,
+              display_name: projectsData[i].display_name,
               deploy: projectsData[i].deploy,
             };
             repoList.push(new_repo);

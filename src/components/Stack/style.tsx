@@ -11,9 +11,11 @@ export const StackCard = styled("div", {
   borderRadius: "$1",
   background: "transparent",
   display: "flex",
-  alignItems: "center",
+  flexWrap: "wrap",
+  // alignItems: "center",
   justifyContent: "center",
   position: "relative",
+  maxWidth: "60%",
 
   [`& ${Text}`]: {
     opacity: 0,

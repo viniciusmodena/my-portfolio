@@ -1,5 +1,5 @@
 // Styles
-import { Container, Flex } from "@/styles/Global";
+import { Box, Container, Flex } from "@/styles/Global";
 import { Text } from "@/styles/Text";
 import { Button } from "@/styles/Buttons";
 
@@ -26,70 +26,83 @@ import {
   ProjectAreaWrapperColumns,
   ProjectsAreaContent,
 } from "./style";
+import { SiDjango, SiPostgresql, SiTypescript } from "react-icons/si";
+import { FaGit, FaPython } from "react-icons/fa";
+import {
+  FaDocker,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaNode,
+  FaReact,
+} from "react-icons/fa";
+import TagCloud from "@/components/TagCloud";
 
 export const Home = (): JSX.Element => {
   const gihubUrl = `https://github.com/${userData.githubUser}`;
   const portfolioUrl = `https://github.com/${userData.githubUser}/my-portfolio`;
+
+  // const data = stackData.map((stack) => stack.title);
 
   return (
     <main id="home">
       <Header>
         <Container>
           <HeaderContent>
-            <Flex>
-              <UserImage
-                src={`https://github.com/${userData.githubUser}.png`}
-                alt={userData.nameUser}
-                title={userData.nameUser}
-                width={"120px"}
-                height={"120px"}
-              />
-              <Text type="heading2" color="grey4">
-                Hey, eu sou {userData.nameUser}.
+            <Box style={{ width: "36rem" }}>
+              <Flex>
+                <UserImage
+                  src={`https://github.com/${userData.githubUser}.png`}
+                  alt={userData.nameUser}
+                  title={userData.nameUser}
+                  width={"120px"}
+                  height={"120px"}
+                />
+                <Text type="heading2" color="grey4">
+                  Hey, eu sou {userData.nameUser}.
+                </Text>
+              </Flex>
+              <Text as="h1" type="heading1" color="grey5">
+                Sou um{" "}
+                <Text as="span" type="heading1" color="brand2">
+                  Desenvolvedor Web FullStack
+                </Text>{" "}
+                , e adoro criar e desenvolver projetos.
               </Text>
-            </Flex>
-            <Text as="h1" type="heading1" color="grey5">
-              Sou um{" "}
-              <Text as="span" type="heading1" color="brand2">
-                Desenvolvedor Web FullStack
-              </Text>{" "}
-              , e adoro criar e desenvolver projetos.
-            </Text>
-            <Text type="body1" color="grey2">
-              Aproveite para dar uma olhado em alguns dos meus projetos.
-            </Text>
-            <HeaderButtonsArea>
-              <Button as="a" type="primary" href="#projects">
-                Projetos
-              </Button>
-              <Button as="a" type="outline" target="_blank" href={portfolioUrl}>
-                Ver codigo do meu portfolio
-              </Button>
-              <Button
-                color="grey4"
-                as="a"
-                css={{ "&:hover": { color: "$grey1" } }}
-                type="circle"
-                target="_blank"
-                href={gihubUrl}
-              >
-                <FaGithub />
-              </Button>
-            </HeaderButtonsArea>
-            <StackCards>
+              <Text type="body1" color="grey2">
+                Aproveite para dar uma olhado em alguns dos meus projetos.
+              </Text>
+              <HeaderButtonsArea>
+                <Button as="a" type="primary" href="#projects">
+                  Projetos
+                </Button>
+                <Button
+                  as="a"
+                  type="outline"
+                  target="_blank"
+                  href={portfolioUrl}
+                >
+                  Ver codigo do meu portfolio
+                </Button>
+                <Button
+                  color="grey4"
+                  as="a"
+                  css={{ "&:hover": { color: "$grey1" } }}
+                  type="circle"
+                  target="_blank"
+                  href={gihubUrl}
+                >
+                  <FaGithub />
+                </Button>
+              </HeaderButtonsArea>
+            </Box>
+            <TagCloud />
+
+            {/* <StackCards>
               {stackData.map((stack, index) => (
                 <Stack key={index} title={stack.title} icon={stack.img} />
               ))}
-            </StackCards>
-            {/* <canvas width="500" height="500" id="myCanvas">
-              <ul>
-                {stackData.map((stack, index) => (
-                  <li key={index}>
-                    <img src={stack.icon}
-                  </li>
-                ))}
-              </ul>
-            </canvas> */}
+            </StackCards> */}
           </HeaderContent>
         </Container>
       </Header>

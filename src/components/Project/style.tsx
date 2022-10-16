@@ -28,7 +28,6 @@ export const ProjectLink = styled("a", {
   marginRight: "$2",
   display: "flex",
   alignItems: "center",
-  lineHeight: "0",
 
   "&:hover": {
     color: "$grey5",
@@ -51,31 +50,14 @@ export const Project = styled("article", {
       "@mobile": {
         width: "auto",
       },
-
-      // "&::before": {
-      //   content: 'New',
-      //   position: "absolute",
-      //   top: "5px",
-      //   right: "-4rem",
-      //   width: "max-content",
-      //   height: "28px",
-      //   backgroundColor: "$brand1",
-      //   padding: "0px 8px",
-      //   borderRadius: "var(--radii-1)",
-      //   fontSize: "14px",
-      //   color: "var(--colors-whiteFixed)",
-      //   fontWeight: "400",
-      //   display: "flex",
-      //   alignItems: "center",
-      //   justifyContent: "center",
-      //   fontFamily: "Inter",
-
-      //   "@mobile": {
-      //     letf: 0,
-      //     top: "-2.5rem",
-      //     right: "auto",
-      //   },
-      // },
     },
   },
+});
+
+export const ProjectImage = styled("img", {
+  width: "100%",
+  // "@mobile": {
+  //   width: "5.25rem",
+  //   height: "5.25rem",
+  // },
 });

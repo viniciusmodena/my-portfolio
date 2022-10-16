@@ -5,6 +5,7 @@ import {
   ProjectStackTech,
   ProjectLink,
   ProjectLinks,
+  ProjectImage,
 } from "./style";
 
 import { Text } from "@/styles/Text";
@@ -25,15 +26,22 @@ export const Project = (): JSX.Element => {
       {repositories &&
         repositories?.map?.((repository) => (
           <ProjectWrapper key={repository.id}>
+            {/* Project Name */}
             <ProjectTitle
               as="h2"
               type="heading3"
               css={{ marginBottom: "$3" }}
               color="grey4"
             >
-              {repository.name}
+              {repository.display_name}
             </ProjectTitle>
-
+            {/* Project Image */}
+            <ProjectImage
+              src={repository.image_url}
+              alt={repository.display_name}
+              title={repository.display_name}
+            />
+            {/* Project Language */}
             <ProjectStack>
               <Text type="body2" color="grey2">
                 Linguagem:
@@ -52,20 +60,19 @@ export const Project = (): JSX.Element => {
                 </ProjectStackTech>
               )}
             </ProjectStack>
-
-            <Text type="body1" color="grey2">
-              {repository.description?.substring(0, 129)}
-            </Text>
+            {/* Project Description */}
+            {/* <Text type="body1" color="grey2">
+              {repository.description}
+            </Text> */}
             <ProjectLinks>
+              {/* GitHub Link */}
               <ProjectLink target="_blank" href={repository.html_url}>
                 <FaGithub /> Codigo Fonte
+                {/* Deploy Link*/}
               </ProjectLink>
-              {repository.homepage && (
-                <ProjectLink
-                  target="_blank"
-                  href={`https://${repository.homepage}`}
-                >
-                  <FaShare /> See demo
+              {repository.deploy && (
+                <ProjectLink target="_blank" href={`${repository.deploy}`}>
+                  <FaShare /> Ver Demonstração
                 </ProjectLink>
               )}
             </ProjectLinks>

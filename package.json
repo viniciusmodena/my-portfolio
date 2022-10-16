@@ -13,7 +13,9 @@
     "framer-motion": "^6.4.2",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
+    "react-icon-cloud": "^4.1.4",
     "react-icons": "^4.4.0",
+    "simple-icons": "^7.13.0",
     "use-media": "^1.4.0"
   },
   "devDependencies": {
