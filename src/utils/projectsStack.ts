@@ -40,7 +40,7 @@ export const projectsData = [
     name: "court-scheduler",
     image_url: court_manager_api,
     display_name: "Facility Scheduler API",
-    deploy: "",
+    deploy: "https://capstone-m5-g2.herokuapp.com/",
   },
   {
     owner: "Kenzie-Academy-Brasil-Developers",
